@@ -34,7 +34,9 @@ namespace MatchingGame.Logic
         {
             var result = new GameSettings();
 
+#pragma warning disable PC001 // API not supported on all platforms
             using (var key = Registry.CurrentUser.OpenSubKey(KeyPath, false))
+#pragma warning restore PC001 // API not supported on all platforms
             {
                 if (key != null)
                 {
